@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://yueve6uu5pk"]
+
+[ext_resource type="Script" uid="uid://b134i8pfnfulp" path="res://main_game.gd" id="1_1oj5k"]
+
+[node name="MainGame" type="Node2D" unique_id=877608826]
+script = ExtResource("1_1oj5k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1418188807]
+
+[node name="TopBar" type="ColorRect" parent="CanvasLayer" unique_id=1831019256]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 60.0
+grow_horizontal = 2
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TopBar" unique_id=1028403345]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Row1" type="HBoxContainer" parent="CanvasLayer/TopBar/VBoxContainer" unique_id=1917128249]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="RoundLabel" type="Label" parent="CanvasLayer/TopBar/VBoxContainer/Row1" unique_id=1186430261]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Round: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer/TopBar/VBoxContainer/Row1" unique_id=679426558]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Time: 03:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinLabel" type="Label" parent="CanvasLayer/TopBar/VBoxContainer/Row1" unique_id=1646067771]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Coin: 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row2" type="HBoxContainer" parent="CanvasLayer/TopBar/VBoxContainer" unique_id=168929359]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="KillLabel" type="Label" parent="CanvasLayer/TopBar/VBoxContainer/Row2" unique_id=53152696]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Kills: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LifeLabel" type="Label" parent="CanvasLayer/TopBar/VBoxContainer/Row2" unique_id=109696231]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "❤️❤️❤️❤️❤️"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverControl" type="Control" parent="CanvasLayer" unique_id=1700790690]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GameOverControl" unique_id=99649159]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.705882)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GameOverControl" unique_id=1104956434]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -30.0
+offset_right = 60.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="CanvasLayer/GameOverControl/VBoxContainer" unique_id=1085869857]
+layout_mode = 2
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/GameOverControl/VBoxContainer" unique_id=2123800770]
+layout_mode = 2
+text = "Restart"
+
+[node name="RoundStartControl" type="Control" parent="CanvasLayer" unique_id=2018569719]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/RoundStartControl" unique_id=322188586]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -15.0
+offset_right = 60.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Round"
+
+[node name="TowerSelectionControl" type="Control" parent="CanvasLayer" unique_id=2086223612]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Background" type="ColorRect" parent="CanvasLayer/TowerSelectionControl" unique_id=1929163694]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TowerSelectionControl" unique_id=1023798919]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="BlueTowerBtn" type="Button" parent="CanvasLayer/TowerSelectionControl/HBoxContainer" unique_id=2141415302]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "Blue
+$2 / 1D"
+
+[node name="YellowTowerBtn" type="Button" parent="CanvasLayer/TowerSelectionControl/HBoxContainer" unique_id=667058599]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "Yellow
+$4 / 2D"
+
+[node name="OrangeTowerBtn" type="Button" parent="CanvasLayer/TowerSelectionControl/HBoxContainer" unique_id=964512160]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "Orange
+$6 / 4D"
+
+[connection signal="pressed" from="CanvasLayer/GameOverControl/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/RoundStartControl/Button" to="." method="_on_start_round_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TowerSelectionControl/HBoxContainer/BlueTowerBtn" to="." method="_on_blue_tower_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/TowerSelectionControl/HBoxContainer/YellowTowerBtn" to="." method="_on_yellow_tower_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/TowerSelectionControl/HBoxContainer/OrangeTowerBtn" to="." method="_on_orange_tower_btn_pressed"]

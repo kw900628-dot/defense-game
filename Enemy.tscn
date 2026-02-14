@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cxi7qbcbhmu65"]
+
+[ext_resource type="Script" uid="uid://bfom8hdjf0jig" path="res://enemy.gd" id="1_tt7e2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqquq"]
+size = Vector2(40, 40)
+
+[node name="Enemy" type="Area2D" unique_id=448126363]
+script = ExtResource("1_tt7e2")
+collision_layer = 2
+collision_mask = 0
+
+[node name="HPLabel" type="Label" parent="." unique_id=1177840483]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=226415832]
+shape = SubResource("RectangleShape2D_gqquq")
