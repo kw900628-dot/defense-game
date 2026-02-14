@@ -1,0 +1,46 @@
+name: Deploy to itch.io
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  GODOT_VERSION: 4.6.0 # Assumed based on project.godot
+  EXPORT_NAME: boxdefense
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Godot
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: ${{ env.GODOT_VERSION }}
+          use-dotnet: false
+
+      - name: Install Export Templates
+        run: |
+          mkdir -p ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable
+          wget -q https://github.com/godotengine/godot/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
+          unzip -q Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
+          mv templates/* ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable/
+          rm -f Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
+
+      - name: Web Build
+        run: |
+          mkdir -p build/web
+          godot --headless --export-release "Web" build/web/index.html
+
+      - name: Deploy to itch.io
+        uses: jeje/butler-push@v1.0.0
+        with:
+          files: build/web
+          butler-key: ${{ secrets.BUTLER_API_KEY }}
+          itch-user: ${{ secrets.ITCH_USER }}
+          itch-game: ${{ secrets.ITCH_GAME }}
+          channel: web
+          version: ${{ github.run_number }}
