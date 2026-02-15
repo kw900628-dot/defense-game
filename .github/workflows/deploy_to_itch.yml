@@ -36,11 +36,11 @@ jobs:
           godot --headless --export-release "Web" build/web/index.html
 
       - name: Deploy to itch.io
-        uses: jeje/butler-push@v1.0.0
+        uses: KikimoraGames/itch-publish@v2.1.3
         with:
-          files: build/web
-          butler-key: ${{ secrets.BUTLER_CREDENTIALS }}
-          itch-user: ${{ secrets.ITCH_USER }}
-          itch-game: ${{ secrets.ITCH_GAME }}
-          channel: web
-          version: ${{ github.run_number }}
+          butlerApiKey: ${{ secrets.BUTLER_CREDENTIALS }}
+          gameData: build/web
+          itchUsername: ${{ secrets.ITCH_USER }}
+          itchGameId: ${{ secrets.ITCH_GAME }}
+          buildChannel: web
+          buildVersion: ${{ github.run_number }}
