@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  GODOT_VERSION: 4.6.0 # Assumed based on project.godot
+  GODOT_VERSION: 4.3 # Downgraded from 4.6 because 4.6 download failed
   EXPORT_NAME: boxdefense
 
 jobs:
