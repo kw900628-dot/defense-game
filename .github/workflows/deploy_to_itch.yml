@@ -43,7 +43,7 @@ jobs:
           ITCH_GAME: ${{ secrets.ITCH_GAME }}
           VERSION: ${{ github.run_number }}
         run: |
-          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          curl -L -o butler.zip https://broth.itch.zone/butler/linux-amd64/LATEST/archive/default
           unzip butler.zip
           chmod +x butler
           ./butler push build/web $ITCH_USER/$ITCH_GAME:web --userversion $VERSION
