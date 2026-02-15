@@ -55,6 +55,11 @@ var selected_tower_type = TowerType.BLUE # 기본 선택 타워
 @onready var orange_btn = %OrangeTowerBtn
 
 func _ready():
+	# 0. 월드 환경 설정 (기본 디자인 업그레이드 - Glow/Adjustment)
+	var world_env = WorldEnvironment.new()
+	world_env.environment = load("res://default_env.tres")
+	add_child(world_env)
+
 	# 게임 시작 시 화면 크기를 가져와서 설정합니다.
 	var viewport_size = get_viewport_rect().size
 	screen_width = viewport_size.x

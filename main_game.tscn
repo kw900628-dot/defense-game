@@ -176,21 +176,21 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 text = "Blue
-$2 / 1D"
+2 coins / 1D"
 
 [node name="YellowTowerBtn" type="Button" parent="CanvasLayer/TowerSelectionControl/HBoxContainer" unique_id=667058599]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 text = "Yellow
-$4 / 2D"
+4 coins / 2D"
 
 [node name="OrangeTowerBtn" type="Button" parent="CanvasLayer/TowerSelectionControl/HBoxContainer" unique_id=964512160]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 text = "Orange
-$6 / 4D"
+6 coins / 4D"
 
 [connection signal="pressed" from="CanvasLayer/GameOverControl/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/RoundStartControl/Button" to="." method="_on_start_round_button_pressed"]
