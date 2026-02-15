@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  GODOT_VERSION: 4.3 # Downgraded from 4.6 because 4.6 download failed
+  GODOT_VERSION: 4.3 # Explicit 4.3 stable
   EXPORT_NAME: boxdefense
 
 jobs:
@@ -16,19 +16,20 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Setup Godot
-        uses: chickensoft-games/setup-godot@v2
-        with:
-          version: ${{ env.GODOT_VERSION }}
-          use-dotnet: false
-
-      - name: Install Export Templates
+      - name: Install Godot and Templates
         run: |
+          # Download and Install Godot Engine
+          wget -q https://github.com/godotengine/godot/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_linux.x86_64.zip
+          unzip -q Godot_v${{ env.GODOT_VERSION }}-stable_linux.x86_64.zip
+          sudo mv Godot_v${{ env.GODOT_VERSION }}-stable_linux.x86_64 /usr/local/bin/godot
+          sudo chmod +x /usr/local/bin/godot
+
+          # Download and Install Export Templates
           mkdir -p ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable
           wget -q https://github.com/godotengine/godot/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
           unzip -q Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
           mv templates/* ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable/
-          rm -f Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
+          rm -f Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz Godot_v${{ env.GODOT_VERSION }}-stable_linux.x86_64.zip
 
       - name: Web Build
         run: |
