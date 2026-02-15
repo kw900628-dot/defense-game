@@ -238,27 +238,27 @@ func _unhandled_input(event):
 func _draw():
 	var viewport_height = get_viewport_rect().size.y
 	
-	# 0. 배경 색상 채우기
-	# 상단 스폰 구역 (어두운 녹색 배경)
-	draw_rect(Rect2(0, 0, screen_width, SPAWN_ZONE_Y), Color(0.1, 0.3, 0.1))
+	# 0. 배경 색상 채우기 (더 어둡게 변경하여 입체감 UP)
+	# 상단 스폰 구역 (아주 어두운 녹색)
+	draw_rect(Rect2(0, 0, screen_width, SPAWN_ZONE_Y), Color(0.02, 0.1, 0.02))
 	
-	# 하단 게임오버 구역 (어두운 빨간색 배경)
-	draw_rect(Rect2(0, game_over_y, screen_width, viewport_height - game_over_y), Color(0.3, 0.1, 0.1))
+	# 하단 게임오버 구역 (아주 어두운 빨간색)
+	draw_rect(Rect2(0, game_over_y, screen_width, viewport_height - game_over_y), Color(0.1, 0.02, 0.02))
 	
-	# 중앙 적 이동 구역 (약간 더 밝은 회색 배경)
+	# 중앙 적 이동 구역 (거의 검은색)
 	var enemy_zone_width = screen_width - (TOWER_ZONE_WIDTH * 2)
 	var enemy_zone_height = game_over_y - SPAWN_ZONE_Y
-	draw_rect(Rect2(TOWER_ZONE_WIDTH, SPAWN_ZONE_Y, enemy_zone_width, enemy_zone_height), Color(0.2, 0.2, 0.2))
+	draw_rect(Rect2(TOWER_ZONE_WIDTH, SPAWN_ZONE_Y, enemy_zone_width, enemy_zone_height), Color(0.05, 0.05, 0.05))
 	
-	# 1. 세로 구분선 (타워 구역 vs 적 구역)
-	draw_line(Vector2(TOWER_ZONE_WIDTH, 0), Vector2(TOWER_ZONE_WIDTH, viewport_height), Color.WHITE, 2.0)
-	draw_line(Vector2(screen_width - TOWER_ZONE_WIDTH, 0), Vector2(screen_width - TOWER_ZONE_WIDTH, viewport_height), Color.WHITE, 2.0)
+	# 1. 세로 구분선 (타워 구역 vs 적 구역) - 네온 효과 (HDR Color)
+	draw_line(Vector2(TOWER_ZONE_WIDTH, 0), Vector2(TOWER_ZONE_WIDTH, viewport_height), Color(2.0, 2.0, 2.0), 3.0)
+	draw_line(Vector2(screen_width - TOWER_ZONE_WIDTH, 0), Vector2(screen_width - TOWER_ZONE_WIDTH, viewport_height), Color(2.0, 2.0, 2.0), 3.0)
 	
-	# 2. 가로 구분선 (스폰 구역, 게임오버 구역)
-	# 상단 스폰 한계선 (녹색)
-	draw_line(Vector2(0, SPAWN_ZONE_Y), Vector2(screen_width, SPAWN_ZONE_Y), Color.GREEN, 2.0)
-	# 하단 게임오버 선 (빨간색)
-	draw_line(Vector2(0, game_over_y), Vector2(screen_width, game_over_y), Color.RED, 2.0)
+	# 2. 가로 구분선 (스폰 구역, 게임오버 구역) - 네온 효과
+	# 상단 스폰 한계선 (형광 녹색)
+	draw_line(Vector2(0, SPAWN_ZONE_Y), Vector2(screen_width, SPAWN_ZONE_Y), Color(0.0, 3.0, 0.0), 3.0)
+	# 하단 게임오버 선 (형광 빨간색)
+	draw_line(Vector2(0, game_over_y), Vector2(screen_width, game_over_y), Color(3.0, 0.0, 0.0), 3.0)
 
 func try_place_tower(mouse_pos):
 	# 1. 격자 좌표 계산 (마우스 위치를 GRID_SIZE로 나눈 몫)
