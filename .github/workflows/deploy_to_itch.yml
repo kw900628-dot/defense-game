@@ -39,7 +39,7 @@ jobs:
         uses: jeje/butler-push@v1.0.0
         with:
           files: build/web
-          butler-key: ${{ secrets.BUTLER_API_KEY }}
+          butler-key: ${{ secrets.BUTLER_CREDENTIALS }}
           itch-user: ${{ secrets.ITCH_USER }}
           itch-game: ${{ secrets.ITCH_GAME }}
           channel: web
