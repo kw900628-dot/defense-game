@@ -1,0 +1,11 @@
+type,hp,speed,shape,color
+level1,1,120,triangle,#DAFDBA
+level2,3,100,triangle,#9AEBA3
+level3,5,90,triangle,#45C4B0
+level4,3,120,circle,#D9CDC5
+level5,7,80,circle,#C4ADA1
+level6,9,70,circle,#96745D
+level7,15,60,arrow,#F2E8DF
+level8,30,50,arrow,#F2C6C2
+level9,10,100,arrow,#F28585
+boss,100,5,star,#F24405

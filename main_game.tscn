@@ -162,38 +162,20 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.15, 0.15, 0.15, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TowerSelectionControl" unique_id=1023798919]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/TowerSelectionControl" unique_id=1234567890]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TowerSelectionControl/ScrollContainer" unique_id=1023798919]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
 alignment = 1
-
-[node name="BlueTowerBtn" type="Button" parent="CanvasLayer/TowerSelectionControl/HBoxContainer" unique_id=2141415302]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-text = "Blue
-2 coins / 1D"
-
-[node name="YellowTowerBtn" type="Button" parent="CanvasLayer/TowerSelectionControl/HBoxContainer" unique_id=667058599]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-text = "Yellow
-4 coins / 2D"
-
-[node name="OrangeTowerBtn" type="Button" parent="CanvasLayer/TowerSelectionControl/HBoxContainer" unique_id=964512160]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-text = "Orange
-6 coins / 4D"
 
 [connection signal="pressed" from="CanvasLayer/GameOverControl/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/RoundStartControl/Button" to="." method="_on_start_round_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/TowerSelectionControl/HBoxContainer/BlueTowerBtn" to="." method="_on_blue_tower_btn_pressed"]
-[connection signal="pressed" from="CanvasLayer/TowerSelectionControl/HBoxContainer/YellowTowerBtn" to="." method="_on_yellow_tower_btn_pressed"]
-[connection signal="pressed" from="CanvasLayer/TowerSelectionControl/HBoxContainer/OrangeTowerBtn" to="." method="_on_orange_tower_btn_pressed"]

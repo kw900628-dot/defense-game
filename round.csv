@@ -1,0 +1,11 @@
+type,time,enemy1,enemy2,enemy3,enemy4
+round1,60,level1,level2,level3,level4
+round2,60,level2,level3,level4,level5
+round3,90,level3,level4,level5,level6
+round4,90,level4,level5,level6,level7
+round5,120,level2,level6,level7,level8
+round6,120,level3,level6,level7,level8
+round7,150,level4,level6,level7,level9
+round8,150,level5,level7,level8,level9
+round9,180,level6,level7,level8,boss
+round10,180,level7,level8,level9,boss

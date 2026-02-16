@@ -1,0 +1,7 @@
+type,cost,fire_interval,bullet_speed,damage,color,shape,size,effect
+towerA,2,1,400,1,#F8FFB0,box,40*40,none
+towerB,5,1.5,300,3,#5FDE87,box,40*40,none
+towerC,8,2,400,5,#9FD7F5,box,40*40,none
+towerD,10,2.5,300,5,#BAA6E0,box,40*40,double shot
+towerS,15,2,400,2,#FF78A3,box,80*40,slow
+towerZ,20,4,200,30,#FF4858,box,80*40,penetrate
